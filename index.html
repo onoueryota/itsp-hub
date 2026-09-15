@@ -134,7 +134,7 @@
   .qr-cap{font-size:10px;text-align:center;color:rgba(255,255,255,.6);margin-top:6px;letter-spacing:.04em}
 
   /* ---- features ---- */
-  .sec-head h2{font-weight:900;font-size:23px;line-height:1.45;margin-top:14px;text-wrap:balance}
+  .sec-head h2{font-weight:900;font-size:21px;line-height:1.45;margin-top:14px}
   .sec-head p{margin-top:12px;font-size:14px;color:var(--muted);max-width:none}
   .feat{display:flex;flex-direction:column;gap:14px;margin-top:30px}
   .fcard{
@@ -209,9 +209,9 @@
   .jobs-sec{padding:34px 0 40px;background:var(--navy-deep)}
   .jobs-sec .eyebrow{color:#9dc0f5;margin:0 24px 18px}
   .jobs-sec .eyebrow::before{background:#9dc0f5}
-  .jobs-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;padding:0 24px 4px}
+  .jobs-scroll{overflow:hidden;padding:0 24px 4px}
   .jobs-scroll::-webkit-scrollbar{display:none}
-  .jobs-track{display:flex;gap:14px;width:max-content}
+  .jobs-track{display:flex;gap:14px;width:max-content;will-change:transform}
   .job-card{flex:0 0 280px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:20px}
   .job-tag{display:inline-block;font-family:"Space Grotesk";font-size:11px;font-weight:700;letter-spacing:.05em;color:#0E2547;background:#9dc0f5;padding:4px 10px;border-radius:999px}
   .job-card h4{font-family:"Zen Kaku Gothic New";font-weight:700;font-size:16px;color:#fff;margin-top:12px;line-height:1.5}
@@ -588,7 +588,7 @@
         </article>
         </div>
     </div>
-    <div class="jobs-hint">◀▶ 横にスクロールできます</div>
+    
   </section>
 
   <!-- FEATURES -->
@@ -748,31 +748,26 @@
     window.addEventListener('resize',update);
   })();
 
-  // auto-scroll the job cards to the left, pausing on user interaction
+  // continuous marquee for the job cards (transform-based: works on iOS)
   (function(){
     const scroller=document.querySelector('.jobs-scroll');
     const track=scroller&&scroller.querySelector('.jobs-track');
     if(!scroller||!track) return;
     const n=track.children.length;
     track.innerHTML+=track.innerHTML;
-    let paused=false,resumeTimer=null,visible=true,half=0,pos=0,last=0;
+    let half=0,pos=0,last=0,visible=true;
     function measure(){ half=track.children[n].offsetLeft-track.children[0].offsetLeft; }
     measure(); window.addEventListener('resize',measure);
     function step(now){
       const dt=last?Math.min(now-last,50):16; last=now;
-      if(!paused&&visible&&half>0){
-        pos+=dt*0.028;
-        if(pos>=half) pos-=half;
-        scroller.scrollLeft=pos;
-      }else{ pos=scroller.scrollLeft; }
+      if(visible&&half>0){
+        pos=(pos+dt*0.042)%half;
+        track.style.transform='translate3d('+(-pos)+'px,0,0)';
+      }
       requestAnimationFrame(step);
     }
-    function pause(){ paused=true; clearTimeout(resumeTimer); }
-    function resume(){ clearTimeout(resumeTimer); resumeTimer=setTimeout(()=>{paused=false;},2200); }
-    ['pointerdown','wheel','touchstart'].forEach(ev=>scroller.addEventListener(ev,pause,{passive:true}));
-    ['pointerup','touchend','mouseleave'].forEach(ev=>scroller.addEventListener(ev,resume,{passive:true}));
     new IntersectionObserver(es=>{visible=es[0].isIntersecting;},{threshold:.01}).observe(scroller);
-    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){ requestAnimationFrame(step); }
+    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches) requestAnimationFrame(step);
   })();
 
   // slow, eased anchor scrolling
