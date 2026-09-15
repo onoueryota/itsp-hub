@@ -23,7 +23,7 @@
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
-  a,button,.dock a,.btn-line,.job-card{-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}
+  a,button,.btn-line,.job-card{-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}
   body{
     font-family:"Noto Sans JP",sans-serif;
     color:var(--ink);
@@ -79,8 +79,8 @@
   @media (max-width:430px){
     .topbar{padding-left:16px;padding-right:16px}
     .navnow span{font-size:12px}
-    .topbar .logo{font-size:15px}
-    .topbar .logo small{font-size:8.5px;letter-spacing:.05em}
+    .topbar .logo,footer .logo{font-size:15px}
+    .topbar .logo small,footer .logo small{font-size:8.5px;letter-spacing:.05em}
   }
 
   /* ---- hero ---- */
@@ -134,7 +134,7 @@
   .qr-cap{font-size:10px;text-align:center;color:rgba(255,255,255,.6);margin-top:6px;letter-spacing:.04em}
 
   /* ---- features ---- */
-  .sec-head h2{font-weight:900;font-size:27px;line-height:1.35;margin-top:14px}
+  .sec-head h2{font-weight:900;font-size:23px;line-height:1.45;margin-top:14px;text-wrap:balance}
   .sec-head p{margin-top:12px;font-size:14px;color:var(--muted);max-width:none}
   .feat{display:flex;flex-direction:column;gap:14px;margin-top:30px}
   .fcard{
@@ -147,24 +147,10 @@
   .ficon.img{width:56px;height:56px;border-radius:50%;background:transparent;overflow:hidden;position:absolute;top:18px;right:18px;border:1px solid var(--line)}
   .ficon.img img{width:125%;height:125%;object-fit:cover;display:block;position:relative;left:-12.5%;top:-12.5%}
 
-  /* ---- ruby ---- */
-  .ruby .sec-head{text-align:center;margin:0 auto}
-  .ruby .sec-head .eyebrow{justify-content:center}
-  .ruby h2{font-weight:900;font-size:26px;line-height:1.32}
-  .ruby-intro{font-size:13px;color:#42566e;text-align:center;max-width:38ch;margin:14px auto 0;text-wrap:pretty}
-  .rgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
-  .rcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 16px;transition:transform .25s,box-shadow .25s}
-  .ric{width:40px;height:40px;border-radius:11px;background:#FBE3E3;display:grid;place-items:center;margin-bottom:12px}
-  .ric svg{width:21px;height:21px;stroke:#D24B4D}
-  .rcard h4{font-family:"Zen Kaku Gothic New";font-weight:700;font-size:14.5px;line-height:1.4}
-  .rcard p{font-size:12px;color:var(--muted);margin-top:7px;line-height:1.65}
-  .ruby-banner{margin-top:18px;background:var(--navy-deep);color:#fff;border-radius:16px;padding:20px 22px;font-size:13.5px;line-height:1.75;text-align:center;text-wrap:pretty}
-  .ruby-banner b{color:#9dc0f5;font-weight:700}
-
   /* ---- steps ---- */
   .steps{margin-top:30px;display:flex;flex-direction:column;gap:0}
-  .step{display:grid;grid-template-columns:46px 1fr;gap:16px;padding-bottom:26px;position:relative}
-  .step:last-child{padding-bottom:0}
+  .step{display:grid;grid-template-columns:46px 1fr;gap:16px;padding-bottom:26px;position:relative;min-height:132px}
+  .step:last-child{padding-bottom:0;min-height:0}
   .step .num{    width:46px;height:46px;border-radius:50%;border:1.5px solid var(--navy);color:var(--navy);
     font-family:"Space Grotesk";font-weight:700;font-size:18px;display:grid;place-items:center;background:var(--paper);z-index:2;
   }
@@ -185,25 +171,15 @@
 
   /* ---- footer ---- */
   footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:36px 24px 40px;font-size:12px}
-  footer .logo{color:#fff;margin-bottom:16px}
-  footer .logo small{color:rgba(255,255,255,.55)}
+  footer .logo{color:#fff;margin:0 auto 16px;gap:9px;width:fit-content;text-align:left}
+  footer .logo>span:last-child{flex:0 0 auto;align-items:flex-start;text-align:left}
+  footer .logo small{color:rgba(255,255,255,.55);letter-spacing:.1em}
   footer a{color:rgba(255,255,255,.75);text-decoration:none}
-  footer .frow{display:flex;gap:18px;flex-wrap:wrap;margin:16px 0;padding:16px 0;border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1)}
   footer .cp{color:rgba(255,255,255,.45);font-size:11px;margin-top:14px;line-height:1.7}
-  footer .finner{display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px}
-  footer .finner .logo{justify-content:center}
+  footer .finner{display:flex;flex-direction:column;align-items:center;gap:4px}
+  footer .finner .logo{justify-content:flex-start;text-align:left}
+  footer .cp{text-align:center}
 
-  /* ---- sticky bottom ---- */
-  .dock{
-    position:sticky;bottom:0;z-index:40;padding:12px 16px calc(12px + env(safe-area-inset-bottom));
-    background:linear-gradient(transparent, var(--paper) 26%);
-  }
-  .dock a{
-    display:flex;align-items:center;justify-content:center;gap:9px;background:var(--line-green);color:#fff;
-    font-weight:700;font-size:15px;line-height:1.2;padding:15px;border-radius:14px;text-decoration:none;
-    box-shadow:0 14px 30px -10px rgba(6,199,85,.7);
-  }
-  .dock svg{width:20px;height:20px}
 
   /* reveal */
   .rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
@@ -247,7 +223,7 @@
 
   /* ---- transition banner ---- */
   .transit-card{background:var(--mist);border:1px solid var(--line);border-radius:18px;padding:26px 24px}
-  .ttag{font-family:"Space Grotesk";font-weight:700;font-size:11px;letter-spacing:.14em;color:var(--navy);text-transform:uppercase}
+  .ttag{font-family:"Space Grotesk";font-weight:700;font-size:16.5px;letter-spacing:.1em;color:var(--navy);text-transform:uppercase}
   .transit-card p{margin-top:11px;font-size:14.5px;font-weight:500;line-height:1.85;color:var(--ink)}
 
   /* ---- company trust ---- */
@@ -258,6 +234,8 @@
   .company-card dl>div{display:grid;grid-template-columns:76px 1fr;gap:10px;font-size:13px}
   .company-card dt{color:var(--muted);font-weight:500}
   .company-card dd{color:var(--ink);font-weight:600}
+  .company-card dd a{color:var(--navy);text-decoration:underline;text-underline-offset:2px}
+  .company-card dd a:hover{color:var(--line-green)}
   .company-note{margin-top:16px;font-size:12.5px;color:var(--muted);line-height:1.8}
   .rep-block{display:flex;align-items:center;gap:12px;margin-top:16px}
   .rep-photo{width:88px;height:88px;border-radius:50%;object-fit:cover;flex:0 0 88px;border:1px solid var(--line)}
@@ -307,17 +285,6 @@
   .final h2{color:#fff}
   .final p{color:rgba(255,255,255,.7)}
   .final .qr-cap{color:rgba(255,255,255,.6)}
-  .ruby{background:var(--navy-deep)}
-  .ruby .sec-head h2{color:#fff}
-  .ruby .sec-head .eyebrow{color:#9dc0f5}
-  .ruby .sec-head .eyebrow::before{background:#9dc0f5}
-  .ruby-intro{color:rgba(255,255,255,.72)}
-  .rcard{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)}
-  .ric{background:rgba(225,90,92,.2)}
-  .ric svg{stroke:#ff9a9b}
-  .rcard p{color:rgba(255,255,255,.6)}
-  .rcard h4{color:#fff}
-  .ruby-banner{background:#05101f;border:1px solid rgba(255,255,255,.1)}
 
   /* =====================================================
      DESKTOP / PC レイアウト (≥ 900px)
@@ -327,7 +294,6 @@
     .topbar{padding:18px clamp(40px,6vw,90px)}
     .navnow{display:none}
     .topnav{display:flex}
-    .dock{display:none}
 
     .inner{max-width:1200px;margin:0 auto;width:100%}
     section{padding:100px clamp(40px,6vw,90px)}
@@ -379,21 +345,13 @@
     .transit-card{max-width:760px;padding:34px 46px;text-align:center}
     .transit-card p{font-size:17px}
 
-    /* ruby: 4-col */
-    .ruby h2{font-size:clamp(30px,3vw,42px)}
-    .ruby-intro{font-size:16px;max-width:64ch;line-height:1.9;margin-top:20px}
-    .rgrid{grid-template-columns:repeat(4,1fr);gap:22px;margin-top:50px}
-    .rcard{padding:26px 22px}
     .rcard:hover{transform:translateY(-4px);box-shadow:0 24px 44px -26px rgba(8,26,54,.4)}
-    .rcard h4{font-size:16.5px}
-    .rcard p{font-size:13.5px;line-height:1.8}
-    .ruby-banner{margin-top:44px;font-size:17px;padding:30px 40px;max-width:900px;margin-left:auto;margin-right:auto;line-height:1.9}
 
     /* steps: 4-col horizontal */
     .how-sec .sec-head{text-align:center;margin:0 auto}
     .how-sec .sec-head .eyebrow{justify-content:center}
     .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:58px;align-items:stretch}
-    .step{grid-template-columns:1fr;gap:0;padding-bottom:0;text-align:left;display:flex;flex-direction:column}
+    .step{grid-template-columns:1fr;gap:0;padding-bottom:0;text-align:left;display:flex;flex-direction:column;min-height:0}
     .step>div{display:flex;flex-direction:column}
     .step>div p{min-height:4.8em}
     .step::before{content:"";left:auto;top:30px;right:-15px;bottom:auto;width:30px;height:1.5px;background:var(--line)}
@@ -422,7 +380,6 @@
     /* footer */
     footer{padding:56px clamp(40px,6vw,90px) 50px}
     footer .finner{max-width:1200px;margin:0 auto;gap:6px}
-    footer .frow{border:0;padding:0;margin:0;gap:26px}
     footer .cp{margin-top:6px}
   }
 
@@ -709,7 +666,7 @@
     <div class="qr rv"><img src="line-qr-temp.jpg" alt="LINE QR" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain"></div>
     <a class="btn-line rv" href="https://line.me/ti/p/L8dYKNPgQ3" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.6 1.6 4.9 4 6.3-.1.6-.6 2.2-.7 2.6 0 .2.1.4.4.3.2 0 2.7-1.8 3.8-2.5.8.1 1.6.2 2.5.2 5.5 0 10-3.6 10-8s-4.5-8-10-8Z"/></svg>
-      LINEで友だち追加（無料）
+      LINEで登録無料
     </a>
   </section>
 
@@ -728,7 +685,7 @@
         <div><dt>代表者</dt><dd>松島 秀彰</dd></div>
         <div><dt>拠点</dt><dd>島根・鳥取・広島・沖縄・東京・大阪</dd></div>
         <div><dt>事業内容</dt><dd>Webアプリケーション開発／システムコンサルティング／システムエンジニアリングサービス</dd></div>
-        <div><dt>社員数</dt><dd>41名</dd></div>
+        <div><dt>社員数</dt><dd>40名</dd></div>
         <div><dt>URL</dt><dd><a href="https://it-sp.co.jp/" target="_blank" rel="noopener">it-sp.co.jp</a></dd></div>
       </dl>
       <p class="company-note">ITSP HUBは、その知見とネットワークを活かした地方特化フリーランスサービスです。</p>
@@ -747,24 +704,11 @@
     </div>
   </footer>
 
-  <div class="dock">
-    <a href="#cta2">
-      <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.6 1.6 4.9 4 6.3-.1.6-.6 2.2-.7 2.6 0 .2.1.4.4.3.2 0 2.7-1.8 3.8-2.5.8.1 1.6.2 2.5.2 5.5 0 10-3.6 10-8s-4.5-8-10-8Z"/></svg>
-      LINEで友だち追加して案件を見る
-    </a>
-  </div>
 
 </div>
 
 <script>
-  function drawQR(cv){
-    const n=21, ctx=cv.getContext('2d'), s=cv.width/n;
-    let seed=7;const rnd=()=>(seed=(seed*1103515245+12345)&0x7fffffff)/0x7fffffff;
-    ctx.clearRect(0,0,cv.width,cv.height);ctx.fillStyle='#0E2547';
-    for(let y=0;y<n;y++)for(let x=0;x<n;x++){if(rnd()>0.52 && !((x<8&&y<8)||(x>n-9&&y<8)||(x<8&&y>n-9)))ctx.fillRect(x*s+ .5,y*s+.5,s-1,s-1);}
-    [[0,0],[n-7,0],[0,n-7]].forEach(([ox,oy])=>{ctx.fillStyle='#0E2547';ctx.fillRect(ox*s,oy*s,7*s,7*s);ctx.clearRect((ox+1)*s,(oy+1)*s,5*s,5*s);ctx.fillRect((ox+2)*s,(oy+2)*s,3*s,3*s);});
-  }
-  document.querySelectorAll('canvas[data-qr]').forEach(drawQR);
+
 
   (function(){
     const slides=document.querySelectorAll('#heroSlider .hero-slide');
@@ -789,7 +733,15 @@
       let active=null;
       for(const s of secs){ if(s.el.getBoundingClientRect().top<=84) active=s; }
       const t=active?active.t:'';
-      if(t!==cur){ cur=t; if(t){ span.textContent=t; label.classList.add('show'); } else { label.classList.remove('show'); } }
+      if(t!==cur){
+        cur=t;
+        if(t){
+          label.classList.remove('show');
+          span.textContent=t;
+          void span.offsetWidth;
+          requestAnimationFrame(()=>label.classList.add('show'));
+        } else { label.classList.remove('show'); }
+      }
     }
     update();
     window.addEventListener('scroll',update,{passive:true});
@@ -803,14 +755,16 @@
     if(!scroller||!track) return;
     const n=track.children.length;
     track.innerHTML+=track.innerHTML;
-    let paused=false,resumeTimer=null,visible=false,half=0;
+    let paused=false,resumeTimer=null,visible=true,half=0,pos=0,last=0;
     function measure(){ half=track.children[n].offsetLeft-track.children[0].offsetLeft; }
     measure(); window.addEventListener('resize',measure);
-    function step(){
+    function step(now){
+      const dt=last?Math.min(now-last,50):16; last=now;
       if(!paused&&visible&&half>0){
-        scroller.scrollLeft+=0.35;
-        if(scroller.scrollLeft>=half) scroller.scrollLeft-=half;
-      }
+        pos+=dt*0.028;
+        if(pos>=half) pos-=half;
+        scroller.scrollLeft=pos;
+      }else{ pos=scroller.scrollLeft; }
       requestAnimationFrame(step);
     }
     function pause(){ paused=true; clearTimeout(resumeTimer); }
