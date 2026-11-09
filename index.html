@@ -7,7 +7,7 @@
 <title>ITSP HUB — 地方で働く、という選択。</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Zen+Kaku+Gothic+New:wght@700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+<link media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Zen+Kaku+Gothic+New:wght@700;900&family=Barlow:wght@600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#0E2547;
@@ -29,15 +29,14 @@
     color:var(--ink);
     background:var(--paper);
     line-height:1.75;
-    -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
   }
   .wrap{max-width:430px;margin:0 auto;position:relative;background:var(--paper);min-height:100%}
   h1,h2,h3,.disp{font-family:"Zen Kaku Gothic New",sans-serif;letter-spacing:.01em}
-  .en{font-family:"Space Grotesk",sans-serif;letter-spacing:.04em}
+  .en{font-family:"Barlow",sans-serif;letter-spacing:.04em}
   section{padding:64px 24px}
   .eyebrow{
-    font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:11px;letter-spacing:.22em;
+    font-family:"Barlow",sans-serif;font-weight:600;font-size:11px;letter-spacing:.22em;
     text-transform:uppercase;color:var(--navy);display:inline-flex;align-items:center;gap:9px;white-space:nowrap;
   }
   .eyebrow::before{content:"";width:22px;height:1.5px;background:var(--navy);display:inline-block}
@@ -46,10 +45,10 @@
   /* ---- top bar ---- */
   .topbar{
     position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;
-    padding:14px 20px;background:rgba(251,251,249,.82);backdrop-filter:blur(12px);
+    padding:14px 20px;background:#fbfbf9;
     border-bottom:1px solid var(--line);gap:12px;
   }
-  .logo{display:flex;align-items:center;gap:9px;font-family:"Space Grotesk";font-weight:700;font-size:16px;letter-spacing:.02em;color:var(--ink);white-space:nowrap;flex:0 0 auto}
+  .logo{display:flex;align-items:center;gap:9px;font-family:"Barlow";font-weight:700;font-size:16px;letter-spacing:.02em;color:var(--ink);white-space:nowrap;flex:0 0 auto}
   .logo>span:last-child{display:flex;flex-direction:column;line-height:1.05}
   .logo .mk{width:22px;height:22px;display:grid;place-items:center}
   .logo .mk svg{width:22px;height:22px}
@@ -106,7 +105,7 @@
     background:repeating-linear-gradient(135deg,#dfe5ed 0 11px,#e9edf3 11px 22px);
     display:flex;align-items:flex-end;
   }
-  .ph span{font-family:"Space Grotesk";font-size:11px;letter-spacing:.06em;color:#6a7990;background:#fff;
+  .ph span{font-family:"Barlow";font-size:11px;letter-spacing:.06em;color:#6a7990;background:#fff;
     padding:5px 10px;margin:12px;border-radius:7px;border:1px solid var(--line)}
   .hero-figure .badge{
     position:absolute;top:14px;left:14px;background:var(--navy);color:#fff;font-size:11px;font-weight:700;
@@ -119,7 +118,7 @@
     margin-top:26px;background:var(--navy);color:#fff;border-radius:22px;padding:24px 22px;
     box-shadow:0 24px 50px -26px rgba(8,26,54,.6);position:relative;overflow:hidden;
   }
-  .cta-card::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;
+  .cta-card::after{content:none;position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;
     background:radial-gradient(circle,rgba(94,140,210,.35),transparent 70%)}
   .cta-card .ct{font-family:"Zen Kaku Gothic New";font-weight:700;font-size:17px;line-height:1.5;position:relative}
   .cta-row{display:flex;gap:16px;align-items:center;margin-top:18px;position:relative}
@@ -145,7 +144,7 @@
     background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;
     box-shadow:0 10px 26px -22px rgba(8,26,54,.4);position:relative;transition:transform .25s,box-shadow .25s;
   }
-  .fcard .no{font-family:"Space Grotesk";font-weight:700;font-size:13px;color:var(--navy);letter-spacing:.1em}
+  .fcard .no{font-family:"Barlow";font-weight:700;font-size:13px;color:var(--navy);letter-spacing:.1em}
   .fcard h3{font-weight:700;font-size:18px;margin:12px 66px 8px 0;line-height:1.45}
   .fcard p{font-size:13.5px;color:#42566e}
   .ficon.img{width:56px;height:56px;border-radius:50%;background:transparent;overflow:hidden;position:absolute;top:18px;right:18px;border:1px solid var(--line)}
@@ -156,7 +155,7 @@
   .step{display:grid;grid-template-columns:46px 1fr;gap:16px;padding-bottom:26px;position:relative;min-height:132px}
   .step:last-child{padding-bottom:0;min-height:0}
   .step .num{    width:46px;height:46px;border-radius:50%;border:1.5px solid var(--navy);color:var(--navy);
-    font-family:"Space Grotesk";font-weight:700;font-size:18px;display:grid;place-items:center;background:var(--paper);z-index:2;
+    font-family:"Barlow";font-weight:700;font-size:18px;display:grid;place-items:center;background:var(--paper);z-index:2;
   }
   .step.fin .num{background:var(--line-green);border-color:var(--line-green);color:#fff}
   .step::before{content:"";position:absolute;left:22.5px;top:46px;bottom:0;width:1.5px;background:var(--line)}
@@ -201,7 +200,7 @@
   .ccard.before .ctag{color:#6b7280}
   .ccard.before li{color:var(--ink)}
   .ccard.after{background:#fff;color:var(--ink);border:1px solid #cdeedd;box-shadow:0 20px 44px -26px rgba(22,150,90,.25)}
-  .ctag{font-family:"Space Grotesk";font-weight:700;font-size:17px;letter-spacing:.12em;text-transform:uppercase;color:#b3413a}
+  .ctag{font-family:"Barlow";font-weight:700;font-size:17px;letter-spacing:.12em;text-transform:uppercase;color:#b3413a}
   .ccard.after .ctag{color:#1a9a5c}
   .ccard ul{margin-top:13px;display:flex;flex-direction:column;gap:9px;list-style:none}
   .ccard li{font-size:13.8px;line-height:1.6;padding-left:18px;position:relative;color:var(--ink);font-weight:500}
@@ -219,7 +218,7 @@
   .jobs-scroll::-webkit-scrollbar{display:none}
   .jobs-track{display:flex;gap:14px;width:max-content;will-change:transform}
   .job-card{flex:0 0 280px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:20px}
-  .job-tag{display:inline-block;font-family:"Space Grotesk";font-size:11px;font-weight:700;letter-spacing:.05em;color:#0E2547;background:#9dc0f5;padding:4px 10px;border-radius:999px}
+  .job-tag{display:inline-block;font-family:"Barlow";font-size:11px;font-weight:700;letter-spacing:.05em;color:#0E2547;background:#9dc0f5;padding:4px 10px;border-radius:999px}
   .job-card h4{font-family:"Zen Kaku Gothic New";font-weight:700;font-size:16px;color:#fff;margin-top:12px;line-height:1.5}
   .job-dl{margin-top:14px;display:flex;flex-direction:column;gap:9px}
   .job-dl>div{display:grid;grid-template-columns:58px 1fr;gap:8px}
@@ -234,12 +233,12 @@
   .transit-card .ttag{display:block;margin-right:66px}
   .transit-sec .transit-card p{margin-top:40px}
   @media(max-width:899px){.sec-head .ba-h2{font-size:clamp(20px,6.9vw,30px)}}.ba-h2 span{white-space:nowrap}
-  .ttag{font-family:"Space Grotesk";font-weight:700;font-size:16.5px;letter-spacing:.1em;color:var(--navy);text-transform:uppercase}
+  .ttag{font-family:"Barlow";font-weight:700;font-size:16.5px;letter-spacing:.1em;color:var(--navy);text-transform:uppercase}
   .transit-card p{margin-top:11px;font-size:14.5px;font-weight:500;line-height:1.85;color:var(--ink)}
 
   /* ---- company trust ---- */
   .company-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px 24px;box-shadow:0 14px 34px -26px rgba(8,26,54,.35)}
-  .ctag2{font-family:"Space Grotesk";font-weight:700;font-size:15px;letter-spacing:.1em;color:var(--navy);text-transform:uppercase}
+  .ctag2{font-family:"Barlow";font-weight:700;font-size:15px;letter-spacing:.1em;color:var(--navy);text-transform:uppercase}
   .company-card h3{font-weight:700;font-size:19px;line-height:1.55;margin-top:12px}
   .company-card dl{margin-top:18px;display:flex;flex-direction:column;gap:10px}
   .company-card dl>div{display:grid;grid-template-columns:76px 1fr;gap:10px;font-size:13px}
@@ -256,9 +255,9 @@
   /* ============ VARIANT B — BOLD NAVY ============ */
   body{background:var(--navy-deep)}
   .wrap{background:var(--paper)}
-  .topbar{background:rgba(8,26,54,.86);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+  .topbar{background:#0f2a52;border-bottom:1px solid rgba(255,255,255,.08)}
   .topbar .logo{color:#fff}
-  .topbar .logo small{color:rgba(255,255,255,.55)}
+  .topbar .logo small{color:#b8c6da}
   .topbar .logo .mk svg path:first-child{fill:#fff}
   .topbar .logo .mk svg path:last-child{fill:#081A36}
   .navnow span{color:#fff}
@@ -267,21 +266,19 @@
   .topnav a:hover{color:#9dc0f5}
   .hero{
     background:
-      radial-gradient(120% 80% at 80% -10%, rgba(76,124,200,.45), transparent 55%),
-      radial-gradient(90% 60% at 0% 12%, rgba(40,80,150,.4), transparent 60%),
-      var(--navy-deep);
+      #0f2a52;
     color:#fff;padding:46px 24px 40px;border-bottom-left-radius:34px;border-bottom-right-radius:34px;
     position:relative;overflow:hidden;
   }
-  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+  .hero::before{content:none;position:absolute;inset:0;opacity:.5;
     background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
     background-size:30px 30px;-webkit-mask:radial-gradient(80% 60% at 50% 0%,#000,transparent 75%)}
   .hero>*{position:relative}
   .hero .eyebrow{color:#9dc0f5}
   .hero .eyebrow::before{background:#9dc0f5}
   .hero h1{font-size:46px;font-weight:900;letter-spacing:-.01em;line-height:1.12;color:#fff}
-  .hero h1 .grad{background:linear-gradient(100deg,#7fb0ff,#bcd4ff);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .hero .lead{color:rgba(255,255,255,.78)}
+  .hero h1 .grad{color:#8fb8ff}
+  .hero .lead{color:#e6edf7}
   .hero-figure{border:1px solid rgba(255,255,255,.14);height:320px;box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
   .hero-figure .ph{background:repeating-linear-gradient(135deg,#16335c 0 11px,#1b3c69 11px 22px)}
   .hero-figure .ph span{background:#0c2b50;color:#bcd0ee;border-color:rgba(255,255,255,.14)}
@@ -413,7 +410,7 @@
 <rect x="90" y="164" width="90" height="10" rx="4" fill="#9dc0f5"/>
 <rect x="90" y="210" width="110" height="32" rx="9" fill="#06C755"/>
 <rect x="230" y="140" width="80" height="100" rx="8" fill="#16335c"/>
-<text x="200" y="330" fill="#9dc0f5" font-family="Arial" font-size="22" font-weight="700" text-anchor="middle" letter-spacing="2">ITSP HUB · PC</text>
+<text x="200" y="330" fill="#9dc0f5" font-family="Barlow, sans-serif" font-size="22" font-weight="700" text-anchor="middle" letter-spacing="2">ITSP HUB · PC</text>
 </svg>
 </template>
 <div class="wrap">
@@ -447,9 +444,9 @@
         <div class="cta-card rv" id="cta">
           <div class="ct">LINEで友だち追加するだけ。<br>あなたに合う案件をご提案します。</div>
           <div class="cta-row">
-            <div class="qr"><img src="line-qr-temp.jpg" alt="LINE QR" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain"></div>
+            <div class="qr"><img src="line-qr.png" alt="LINE QR" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain"></div>
             <div class="cta-side">
-              <a class="btn-line" href="https://line.me/ti/p/L8dYKNPgQ3" target="_blank" rel="noopener">
+              <a class="btn-line" href="https://lin.ee/ZCK1zns" target="_blank" rel="noopener">
                 <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.6 1.6 4.9 4 6.3-.1.6-.6 2.2-.7 2.6 0 .2.1.4.4.3.2 0 2.7-1.8 3.8-2.5.8.1 1.6.2 2.5.2 5.5 0 10-3.6 10-8s-4.5-8-10-8Z"/></svg>
                 <span class="ll">LINEで<br>登録無料</span>
               </a>
@@ -466,7 +463,7 @@
         <div class="hero-slide active"><img src="hero-photo.jpg" alt="ITSP HUB スタッフ" fetchpriority="high" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph" style="display:none"><span>写真差し替え予定 1/3</span></div></div>
         <div class="hero-slide"><img src="hero-photo-4.jpg" alt="ITSP HUB スタッフ" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph" style="display:none"><span>写真差し替え予定 2/3</span></div></div>
         <div class="hero-slide"><img src="hero-photo-3.jpg" alt="ITSP HUB スタッフ" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph" style="display:none"><span>写真差し替え予定 3/3</span></div></div>
-        <div class="hero-slide"><img src="hero-photo-2.jpg" alt="ITSP HUB スタッフ" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph" style="display:none"><span>写真差し替え予定 3/3</span></div></div>
+        <div class="hero-slide"><img src="hero-photo-5.jpg" alt="ITSP HUB スタッフ" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph" style="display:none"><span>写真差し替え予定 3/3</span></div></div>
       </div>
     </div>
   </section>
@@ -689,8 +686,8 @@
     <span class="eyebrow rv" style="display:inline-flex;justify-content:center">Start here</span>
     <h2 class="rv">まずは、LINEから。</h2>
     <p class="rv">「ちょっと話を聞いてみたい」でも大丈夫。<br>あなたの地方での働き方を、一緒に考えます。</p>
-    <div class="qr rv"><img src="line-qr-temp.jpg" alt="LINE QR" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain"></div>
-    <a class="btn-line rv" href="https://line.me/ti/p/L8dYKNPgQ3" target="_blank" rel="noopener">
+    <div class="qr rv"><img src="line-qr.png" alt="LINE QR" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain"></div>
+    <a class="btn-line rv" href="https://lin.ee/ZCK1zns" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.6 1.6 4.9 4 6.3-.1.6-.6 2.2-.7 2.6 0 .2.1.4.4.3.2 0 2.7-1.8 3.8-2.5.8.1 1.6.2 2.5.2 5.5 0 10-3.6 10-8s-4.5-8-10-8Z"/></svg>
       LINEで登録無料
     </a>
